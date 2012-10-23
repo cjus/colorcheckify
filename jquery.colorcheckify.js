@@ -1,5 +1,5 @@
 /*!
- * jQuery ColorCheckify plugin -- version 0.50
+ * jQuery ColorCheckify plugin -- version 0.60
  * Creates a color checkbox
  * @author  Carlos Justiniano (carlos.justiniano@gmail.com)
  *
@@ -17,7 +17,7 @@
          boxcolor:'#8ACD40', /* default css color, can be color name or hex triplets */
          onClick:null            /* callback function when checkbox is toggled */
       };
-      var options = $.extend(defaults, options);
+      options = $.extend(defaults, options);
 
       return this.each(function (i) {
          var that = this;
@@ -49,7 +49,7 @@
             else if (options.checkstyle === 'heavy')
                $this.html('&#10004;');
          } else {
-            $this.html('&nbsp;')
+            $this.html('&nbsp;');
          }
 
          $this.click(function (e) {
@@ -60,14 +60,14 @@
                else if (options.checkstyle === 'heavy')
                   $this.html('&#10004;');
             } else {
-               $this.html('&nbsp;')
+               $this.html('&nbsp;');
             }
-            if (options.onClick != undefined)
+            if (options.onClick !== undefined)
                options.onClick();
             return false;
          });
 
       });
-   }
+   };
 })(jQuery);
 
